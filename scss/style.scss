@@ -1,0 +1,385 @@
+@import 'fonts.scss';
+@import 'normalize.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.header-block, 
+.menu, 
+.choose-us, 
+.infographics, 
+.spain, 
+.what-say, 
+.footer{
+    padding: 0 15px;
+
+    @media screen and (max-width:576px) {
+        padding: 10px calc(50vw - 270px);   
+    }
+    @media screen and (min-width:768px) {
+        padding: 10px calc(50vw - 360px);
+    }
+    @media screen and (min-width:992px) {
+        padding: 10px calc(50vw - 480px);
+    }
+    @media screen and (min-width:1120px) {
+        padding: 10px calc(50vw - 560px);
+    }
+}
+
+.header {
+    background: url('../img/backgr1.jpg');
+    color: white;
+    &-block {
+        @include container;
+        @include padding;
+        
+    }
+    &-title {
+        margin-bottom: 15px;
+        font-size: 48px;
+        line-height: 26px;
+        text-transform: uppercase;
+        font-family: $font-bold;
+        
+        @media screen and (max-width:576px) {
+            font-size: 26px;
+        }
+    }
+    &-text {
+        margin-top: 0;
+        font-size: 22px;
+        font-family: $font-text;
+    }
+    &-form {
+        @include block;
+        margin-top: 25px;
+        padding: 2px;
+        background: #ffffff;
+
+        @media screen and (max-width:768px) {
+            justify-content: center;
+            background: none;
+        }
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+            background: none;
+         }
+
+       & input[type=text]{
+           padding: 12px 50px;
+           font-size: 14px;
+           color: #999999;
+           border: none;
+           
+           &::placeholder {
+            font-family: $font-text;  
+           }
+
+           &:focus {
+            outline: none;
+           }
+
+       }
+       & input[type=submit] {
+           @include button;
+           text-transform: uppercase;
+
+           &:focus {
+            outline: none;
+           }
+
+       }
+       & label {
+           background: #5474fd;
+           position: relative;
+           
+       &::after {
+        content: "\e900";
+            font-family: "icomoon";
+            font-size: 30px;
+            top: 8px;
+            position: absolute;
+            right: 8px;
+       }
+
+       @media screen and (max-width:399px) {
+           margin-top: 30px;
+       }
+    }
+    }
+    &-bottom-text {
+        margin-top: 80px;
+        font-family: $font-text;
+        font-size: 14px;
+    }
+}
+    .menu {
+        @include block;
+        
+        position: sticky;
+        top: 0;
+        background: #5474fd;
+        color: white;
+
+    
+    &-logo {
+        margin: 0;
+        @include logo;
+        
+        @media screen and (max-width:768px) {
+            margin:10px auto;
+        }
+
+    }
+    &-list {
+        @include block;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-family: $font-regular;
+
+        @media screen and (max-width:768px) {
+            margin:10px auto;
+        }
+
+        @media screen and (max-width:576px) {
+            margin: 0px auto;
+            justify-content: center;
+            font-size: 25px;
+            line-height: 38px;
+        }
+
+        & li {    
+            padding: 0 15px;
+            list-style-type: none;
+        & a {
+            color: white;
+            text-decoration: none;
+        }
+        }
+    }
+}
+
+.choose-us {
+    @include block;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: url('../img/backgr2.jpg');
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+
+
+    &-content {
+        @include container;
+        justify-content: center;
+        align-items: flex-start;
+        width: 46%;
+        
+        @media screen and (max-width:768px) {
+            width: 100%;
+            flex-direction: row;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+            display: inline-block;
+         }
+
+    }
+    &-title {
+        @include title;
+    }
+    &-text {
+        font-family: $font-text;
+        font-size: 16px;
+    }
+    &-btn {
+        @include button;
+        margin: 30px 0;
+        &:hover {
+            background: #4b68e2;
+        }
+
+    }
+    &-item img {
+        width: 100%;
+    }
+    &-item:last-child{
+        align-self: flex-end;
+    }
+
+}
+
+.infographics {
+    @include block;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #333333;
+
+
+&-content {
+    width: 30%;
+
+    @media screen and (max-width:576px) {
+        width:100%;
+    }
+
+
+&:hover .icon,
+&:checked .icon{
+    color: #ff6363;
+
+}
+}
+
+    &-text {
+        font-family: $font-regular;
+        font-size: 26px;
+        line-height: 26px;
+        color: white;
+        text-align: center;
+    }
+}
+
+.icon {
+    display: block;
+    text-align: center;
+    font-size: 38px;
+    color: #5474fd;
+}
+
+
+.spain {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background: url('../img/backgr3.jpg');
+    background-size: cover;
+    color:white;
+
+    &__right {
+    background: url('../img/backgr4.jpg');
+
+    }
+
+
+    &-block {
+        width: 44%;
+        padding: 20px;
+        background: rgba(35, 35, 35, 0.9);
+
+        &__right {
+            margin-left: auto;
+        }
+
+        @media screen and (max-width:768px) {
+            width: auto;
+            text-align: center;
+        }
+    }
+
+    &-title{
+        @include subtitle;
+    }
+    &-subtitle {
+        @include subtitle;
+        text-transform: uppercase;
+    }
+    &-text {
+        font-family: $font-text;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    &-btn {
+        margin: 30px 0;
+        @include button;
+        &:hover {
+            background: #4b68e2;
+        }
+    }
+}
+
+.what-say {
+    @include padding;
+    background: url('../img/backgr5.jpg');
+    background-size: cover;
+    color: white;
+
+    
+    &-item {
+        @include block;
+        justify-content: flex-end;
+        width: 41%;
+
+        @media screen and (max-width:768px) {
+            width: 80%;
+        }
+
+        &__right {
+            background: #333333;
+            width: 53%;
+            padding: 20px;
+            flex-direction: column;
+
+            @media screen and (max-width:768px) {
+                width: 73.4%;
+            }
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    &-title {
+        margin-bottom: 90px;
+        margin-top: 0;
+        @include title;
+        text-align: center;
+    }
+    &-content {
+        @include block;
+        justify-content: center;
+    }
+    &-subtitle {
+        @include subtitle;
+        text-transform: uppercase;
+    }
+    &-text {
+        @include text;
+       
+    }
+}
+
+.footer {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background: #232323;
+    text-align: center;
+    color: white;
+
+    &-logo {
+        @include logo;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+    &-text {
+        @include text;
+        margin-top: 0;
+    }
+    &-icon a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+  
+.icon1 {
+    margin: 0 6px;
+    font-size: 18px;
+    &:hover {
+        color: #5474fd;
+    }
+
+ }
